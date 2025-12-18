@@ -1,0 +1,112 @@
+﻿<Window x:Class="Rekensommen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rekensommen"
+        mc:Ignorable="d"
+        Foreground="White"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="132.982" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="179.84" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--Geef achtergrond een kleur-->
+
+        <Grid Grid.ColumnSpan="5" Grid.RowSpan="3">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF939393" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+
+
+        <GroupBox Header="Opties" Grid.ColumnSpan="2" Margin="10"/>
+        <StackPanel Grid.Column="0" Margin="20,20,0,0" >
+            <Label Content="Getal 1" Foreground="White"/>
+            <Label Content="Van:" Foreground="White"/>
+            <TextBox x:Name="van1" Text="" Width="Auto" Margin="5,0,5,0" TextAlignment="Right" TextChanged="Range"/>
+            <Label Content="Tot:" Foreground="White"/>
+            <TextBox x:Name="tot1" Text="" Width="Auto" Margin="5,0,5,0" TextAlignment="Right" TextChanged="Range"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="10,20,10,0" >
+            <Label Content="Getal 2" Foreground="White"/>
+            <Label Content="Van:" Foreground="White"/>
+            <TextBox x:Name="van2" Text="" Width="Auto" Margin="5,0,15,0" TextAlignment="Right" TextChanged="Range"/>
+            <Label Content="Tot:" Foreground="White"/>
+            <TextBox x:Name="tot2" Text="" Width="Auto" Margin="5,0,15,0" TextAlignment="Right" TextChanged="Range"/>
+        </StackPanel>
+
+        <GroupBox Header="Bewerking" Grid.ColumnSpan="1" Grid.Column="2" Margin="10"/>
+        <StackPanel Grid.Column="2" >
+            <CheckBox x:Name="optellen" Margin="0,40,0,0" Content="Optellen" HorizontalAlignment="Center" Foreground="White"/>
+            <CheckBox x:Name="aftrekken" Margin="0,10,0,0" Content="Optellen" HorizontalAlignment="Center" Foreground="White"/>
+
+        </StackPanel>
+        
+        <GroupBox Header="Uitkomst" Grid.ColumnSpan="2" Grid.Column="3" Margin="10"/>
+        <StackPanel Grid.Column="3" Margin="30,40,0,0" Grid.ColumnSpan="2" Orientation="Vertical">
+            <Label Content="Negatieve getallen toelaten?"
+           Foreground="White"
+           Margin="0,0,0,4"
+           VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal"  >
+                <RadioButton Content="Ja" Margin="0,0,8,0" Foreground="White"/>
+                <RadioButton Content="Nee" Foreground="White"/>
+            </StackPanel>
+
+            <Label Content="Maximum toepassen?" Foreground="White" Margin="0,15,0,0"/>
+            <StackPanel Orientation="Horizontal"  >
+                <RadioButton Content="Ja" Margin="0,6,08,0" Foreground="White"/>
+                <RadioButton Content="Nee" Margin="0,6,08,0" Foreground="White"/>
+                <Label Content="Maximum: " Foreground="White" Margin="0,0,0,0" />
+                <TextBox Text="100" Background="White" Foreground="LightGray" Width="Auto" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,5,10,10"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2">
+            <Button Width="Auto" Height="5"  Background="Transparent" BorderThickness="0"/>
+            <Image Source="/Images/clock.png"
+               Stretch="Uniform"
+               Width="32" Height="32"/>
+        </StackPanel>
+
+        <Label x:Name="firstNumberLabel" Content="_" Grid.Row="1" Grid.Column="0" FontSize="80" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+
+        <Label x:Name="operatorLabel" Content="+" Grid.Row="1" Grid.Column="1" FontSize="88" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        <Label x:Name="secondNumberLabel" Content="_" Grid.Row="1" Grid.Column="2" FontSize="80" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        <Label x:Name="equalsLabel" Content="=" Grid.Row="1" Grid.Column="3" FontSize="88" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        <TextBox x:Name="resultTextBox" Text="??" Grid.Row="1" Grid.Column="4" FontSize="88" VerticalAlignment="Top" HorizontalAlignment="Center" Width="150" Margin="0,0,0,10" IsReadOnly="True" TextAlignment="Center"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+               Foreground="White"
+       HorizontalAlignment="Left"
+       VerticalAlignment="Top"
+       FontSize="18"
+       Padding="0"
+       Margin="10">
+            <StackPanel>
+                <TextBlock Text="Instructies" FontWeight="Bold"/>
+                <TextBlock Text="- Dubbelklik =" />
+                <TextBlock Text="- Vul het antwoord in en druk op Enter" />
+                <TextBlock Text="- Verbeter je tijd!" />
+            </StackPanel>
+        </Label>
+
+    </Grid>
+</Window>
