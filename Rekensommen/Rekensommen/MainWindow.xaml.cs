@@ -16,6 +16,8 @@ namespace Rekensommen
         public MainWindow()
         {
             InitializeComponent();
+            eventCalendar.Visibility = Visibility.Hidden;
+
         }
 
         private void Range(object sender, TextChangedEventArgs e)
@@ -30,6 +32,7 @@ namespace Rekensommen
             ValidateBox(van2);
             ValidateBox(tot1);
             ValidateBox(tot2);
+
         }
 
         private void ValidateBox(TextBox box)
@@ -59,6 +62,39 @@ namespace Rekensommen
 
             // Geldig
             box.Background = Brushes.White;
+
+        }
+
+        private void Optellen(object sender, RoutedEventArgs e)
+        {
+            if(optellen.IsChecked == true && aftrekken.IsChecked == false)
+            {
+                operatorLabel.Content = "+";
+            }
+            
+        }
+
+        private void Aftrekken(object sender, RoutedEventArgs e)
+        {
+            if (optellen.IsChecked == false && aftrekken.IsChecked == true)
+            {
+                operatorLabel.Content = "-";
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime? selected = eventCalendar.SelectedDate;
+            eventCalendar.DisplayDate = DateTime.Today;
+
+
+            MessageBox.Show($"{DateTime.Today}");
+
+        }
+
+        private void equalsClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
