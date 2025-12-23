@@ -78,10 +78,17 @@
             </StackPanel>
         </StackPanel>
 
-            <Button x:Name="datumTijd" Grid.Row="3" Grid.Column="2"  Height="80"  Background="Transparent" BorderThickness="0" Click="Button_Click"/>
-            <Image Grid.Row="3" Grid.Column="2" Source="/Images/clock.png"
-               Stretch="Uniform"
-               Width="80"/>
+        <Button x:Name="datumTijd" 
+        Grid.Row="3" 
+        Grid.Column="2"  
+        Height="80"  
+        Width="80"
+        Background="Transparent" 
+        BorderThickness="0" 
+        Click="Button_Click">
+            <Image Source="/Images/clock.png" 
+           Stretch="Uniform"/>
+        </Button>
         <Calendar x:Name="eventCalendar"/>
 
         <Label x:Name="firstNumberLabel" Content="_" Grid.Row="1" Grid.Column="0" FontSize="80" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
@@ -91,8 +98,7 @@
         <Label x:Name="secondNumberLabel" Content="_" Grid.Row="1" Grid.Column="2" FontSize="80" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
         <TextBox x:Name="resultTextBox" Text="??" Grid.Row="1" Grid.Column="4" FontSize="88" VerticalAlignment="Top" HorizontalAlignment="Center" Width="150" Margin="0,0,0,10" IsReadOnly="True" TextAlignment="Center"/>
 
-        <Label x:Name="equalsLabel" Content="=" Grid.Row="1" Grid.Column="3" FontSize="88" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-        <Button x:Name="equalsButton" Grid.Row="1" Grid.Column="3"  Height="80"  Background="Transparent" BorderThickness="0" Click="equalsClick"/>
+        <Button x:Name="equalsButton" FontSize="88" Content="=" Grid.Row="1" Grid.Column="3"  Height="Auto"   Background="Transparent" Margin="0,0,0,20" BorderThickness="0" Click="equalsClick" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
 

@@ -94,6 +94,20 @@ namespace Rekensommen
 
         private void equalsClick(object sender, RoutedEventArgs e)
         {
+            int num1 = int.Parse(van1.Text);
+            int num2 = int.Parse(van2.Text);
+            int num3 = int.Parse(tot1.Text);
+            int num4 = int.Parse(tot2.Text);
+
+
+            Random rnd = new Random();
+            int Num1 = rnd.Next(num1, num3);  
+            int Num2 = rnd.Next(num2, num4);   
+
+
+
+            firstNumberLabel.Content = Num1.ToString();
+            secondNumberLabel.Content = Num2.ToString();
 
         }
     }
